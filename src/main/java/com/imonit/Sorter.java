@@ -20,7 +20,11 @@ class Sorter<T extends Comparable<T>> {
     }
 
     void swap(List<T> list, int pos1, int pos2) {
-        if (pos1 < list.size() || pos2 < list.size()) {
+        if (list.size() < 1) {
+            return;
+        }
+
+        if (pos1 >= list.size() || pos2 >= list.size()) {
             throw new IllegalArgumentException("pos1 and pos2 must be < the size of the list");
         }
 
