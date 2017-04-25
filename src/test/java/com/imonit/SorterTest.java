@@ -32,7 +32,7 @@ public class SorterTest {
 
     @Test
     public void sortEmptyList() {
-        List<Integer> toBeSorted = new ArrayList<Integer>();
+        List<Integer> toBeSorted = new ArrayList<>();
         assertThat(new Sorter<Integer>().sort(toBeSorted), is(toBeSorted));
     }
 
@@ -47,7 +47,7 @@ public class SorterTest {
     public void swapValues() {
         List<Integer> list = Arrays.asList(1, 2);
 
-        Sorter<Integer> integerSorter = new Sorter<Integer>();
+        Sorter<Integer> integerSorter = new Sorter<>();
         integerSorter.swap(list, 0, 1);
         assertThat(list.get(0), is(2));
         assertThat(list.get(1), is(1));
@@ -58,7 +58,7 @@ public class SorterTest {
         boolean exceptionCaught = false;
 
         List<Integer> list = Arrays.asList(1, 2);
-        Sorter<Integer> integerSorter = new Sorter<Integer>();
+        Sorter<Integer> integerSorter = new Sorter<>();
 
         try {
             integerSorter.swap(list, 1, 2);
@@ -71,14 +71,9 @@ public class SorterTest {
 
     @Test
     public void swapEmptyList() {
-        List<Integer> list = new ArrayList<Integer>();
+        List<Integer> list = new ArrayList<>();
 
-        Sorter<Integer> integerSorter = new Sorter<Integer>();
+        Sorter<Integer> integerSorter = new Sorter<>();
         integerSorter.swap(list, 0, 0);
-    }
-
-    @Test
-    public void sortWithRestAPI() {
-        
     }
 }
